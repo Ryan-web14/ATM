@@ -45,12 +45,21 @@ public class Account
     System.out.println("Your balance is " + _balance);
   }
 
+  public boolean isAdmin(int pin)
+  {
+    if(pin == _adminPin)
+      return true;
+    else
+      return false;
+  }
+
    //getter
    public String getName(){return _name;}
    public String getSurname(){return _surname;}
    public int getPin(){return _pin;}
    public String getUserName(){return _userName;}
    public int getBalance(){return _balance;}
+  public int getAdminPin() {return _adminPin;}
    
    //setter 
    public void setName(String name){_name = name;}
@@ -59,10 +68,12 @@ public class Account
    public void setUserName(String userName){_userName = userName;};
    public void setBalance(int balance){_balance = balance;}
    
+   private int _accountNumber;
    private String _userName;
    private String _name;
    private String _surname;
    private int _pin;
    private int _balance;
+   private int _adminPin;
 
 }
