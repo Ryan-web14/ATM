@@ -3,6 +3,13 @@
 public class Account
 {
    public Account(){}
+
+   public Account(String userName, int pin)
+   {
+    _userName = userName;
+    _pin = pin;
+    _accountNumber++;
+   }
    public Account(String name, String surname,String userName, int pin, int balance)
    {
      _name = name;
@@ -10,25 +17,15 @@ public class Account
      _pin = pin;
      _userName = userName;
      _balance = balance;
+     _accountNumber++;
+   }
+
+   public void displayAccount()
+   {
+     System.out.println("account N°"+_accountNumber+ " Username: " + getUserName() + " \nbalance: " + getBalance() + " userpin: " + getPin());
    }
    
-   //check if the pin matches with the account in the database
-   public boolean checkPin(int userPin)
-   {
-    if(userPin == getPin())
-      return true;
-    else 
-      return false;
-   }
-  
-   //check if the username with the account in the database
-   public boolean checkUsername(String userName)
-   {
-    if (userName == getUserName())
-      return true;
-    else 
-      return false;
-   }
+
 
   public void deposit(int amount)
   { 
@@ -68,7 +65,7 @@ public class Account
    public void setUserName(String userName){_userName = userName;};
    public void setBalance(int balance){_balance = balance;}
    
-   private int _accountNumber;
+   private static int _accountNumber = 1;
    private String _userName;
    private String _name;
    private String _surname;
