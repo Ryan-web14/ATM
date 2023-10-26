@@ -1,6 +1,7 @@
 
+import java.io.Serializable;
 
-public class Account
+public class Account implements Serializable
 {
    public Account(){}
 
@@ -10,19 +11,19 @@ public class Account
     _pin = pin;
     _accountNumber++;
    }
-   public Account(String name, String surname,String userName, int pin, int balance)
+   public Account(int number,String name, String surname,String userName, int pin, int balance)
    {
      _name = name;
      _surname = surname;
      _pin = pin;
      _userName = userName;
      _balance = balance;
-     _accountNumber++;
+     _accountNumber = number;
    }
 
    public void displayAccount()
    {
-     System.out.println("account N°"+_accountNumber+ " Username: " + getUserName() + " \nbalance: " + getBalance() + " userpin: " + getPin());
+     System.out.println("account N°"+_accountNumber+ " Username: " + getUserName() + " \nbalance: " + getBalance() + "\nuserpin: " + getPin());
    }
    
 
@@ -51,12 +52,13 @@ public class Account
   }
 
    //getter
+   public int getAccountNumber(){return _accountNumber;}
    public String getName(){return _name;}
    public String getSurname(){return _surname;}
    public int getPin(){return _pin;}
    public String getUserName(){return _userName;}
    public int getBalance(){return _balance;}
-  public int getAdminPin() {return _adminPin;}
+   public int getAdminPin() {return _adminPin;}
    
    //setter 
    public void setName(String name){_name = name;}
@@ -65,7 +67,7 @@ public class Account
    public void setUserName(String userName){_userName = userName;};
    public void setBalance(int balance){_balance = balance;}
    
-   private static int _accountNumber = 1;
+   private int _accountNumber = 0;
    private String _userName;
    private String _name;
    private String _surname;

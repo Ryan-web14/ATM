@@ -16,7 +16,7 @@ public class LoginCheck
     try
     {
     String url = "jdbc:mysql://localhost:3306/bankdatabase?useSSL=FALSE";
-    String pswd = "jOJoRR-@1203_)";
+String pswd = "jOJoRR-@1203_)";
     String user = "root";
     Connection co = DriverManager.getConnection(url,user,pswd);
     
