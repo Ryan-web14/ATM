@@ -46,9 +46,17 @@ abstract public class Transaction implements Serializable
         return _accountNumber; 
     }
 
+    public int getTransactionNumber()
+    {
+        return _transactionNumber;
+    }
+
+    public String getTransactionName()
+    {
+        return _transactionName;
+    }
+
     abstract public void displayTransactionInfo();
-
-
 
     private int _transactionNumber; 
     protected int _accountNumber;

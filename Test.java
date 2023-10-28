@@ -19,5 +19,8 @@ public class Test
         //acm.addAccount(user3);
 
         acm.deleteAccount(1);
+
+        Deposit dep = new Deposit(1, 3, 5000);
+        dep.displayTransactionInfo();
     }
 }
